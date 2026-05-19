@@ -1,8 +1,8 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 	<PropertyGroup>
-		<TargetFrameworks>uap10.0.18362</TargetFrameworks>
+		<TargetFrameworks>uap10.0.26100</TargetFrameworks>
 		<TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
-		<TargetPlatformRevision>22000</TargetPlatformRevision>
+		<TargetPlatformRevision>26100</TargetPlatformRevision>
 		<TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
 		<TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
 		<TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
@@ -15,6 +15,7 @@
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
 		<RootNamespace>Yugen.Toolkit.Uwp.Controls</RootNamespace>
 		<Platforms>x64;ARM64</Platforms>
+		<PlatformTarget>x64</PlatformTarget>
 		<RuntimeIdentifiers>win10-x64;win-arm64</RuntimeIdentifiers>
 		<NoWarn>$(NoWarn);NETSDK1023</NoWarn>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -56,12 +57,12 @@
 		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
 		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
 		<!-- XAML control -->
-		<None Include="bin\Release\uap10.0.22000\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\uap10.0.22000\Yugen.Toolkit.Uwp.Controls" />
+		<None Include="bin\Release\$(TargetFrameworks)\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\uap10.0.22000\Yugen.Toolkit.Uwp.Controls" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14" />
-		<PackageReference Include="Microsoft.UI.Xaml" Version="2.7.3" />
+		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7" />
 	</ItemGroup>
 
 	<ItemGroup>

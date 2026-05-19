@@ -5,7 +5,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:controls="using:Yugen.Toolkit.Uwp.Audio.Controls"
       xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -45,9 +44,9 @@
                             IsPaused="{x:Bind PauseToggleButton.IsChecked.Value, Mode=OneWay}"
                             IsStep="{x:Bind ViewModel.IsStep, Mode=OneWay}">
                 <interactivity:Interaction.Behaviors>
-                    <core:EventTriggerBehavior EventName="Update">
-                        <core:InvokeCommandAction Command="{x:Bind ViewModel.UpdateCommand}" />
-                    </core:EventTriggerBehavior>
+                    <interactivity:EventTriggerBehavior EventName="Update">
+                        <interactivity:InvokeCommandAction Command="{x:Bind ViewModel.UpdateCommand}" />
+                    </interactivity:EventTriggerBehavior>
                 </interactivity:Interaction.Behaviors>                
             </controls:Vinyl>
         </Border>

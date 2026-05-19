@@ -1,8 +1,8 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
 	<PropertyGroup>
-	  <TargetFrameworks>uap10.0.18362</TargetFrameworks>
+	  <TargetFrameworks>uap10.0.26100</TargetFrameworks>
 	  <TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
-	  <TargetPlatformRevision>22000</TargetPlatformRevision>
+	  <TargetPlatformRevision>26100</TargetPlatformRevision>
 	  <TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
 	  <TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
 	  <TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
