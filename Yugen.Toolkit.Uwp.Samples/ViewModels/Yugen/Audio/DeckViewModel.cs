@@ -1,6 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.Toolkit.Uwp;
-using Microsoft.Toolkit.Uwp.Helpers;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -11,6 +9,7 @@ using Yugen.Audio.Samples.Interfaces;
 using Yugen.Audio.Samples.Services;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Audio.Services.Abstractions;
+using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Audio.Samples.ViewModels
@@ -94,7 +93,7 @@ namespace Yugen.Audio.Samples.ViewModels
                 var dispatcherQueue = DispatcherQueue.GetForCurrentThread();
                 await Task.Run(() =>
                 {
-                    dispatcherQueue.EnqueueAsync(() =>
+                    dispatcherQueue.TryEnqueue(() =>
                     {
                         Bpm = _bpmService.Decoding(bpmStream);
                     });

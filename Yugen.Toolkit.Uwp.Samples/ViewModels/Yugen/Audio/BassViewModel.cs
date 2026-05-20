@@ -1,6 +1,4 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.Toolkit.Uwp;
-using Microsoft.Toolkit.Uwp.Helpers;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,6 +9,7 @@ using Windows.System;
 using Yugen.Audio.Samples.Services;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Audio.Services.Common.Helpers;
+using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Audio.Samples.ViewModels
@@ -43,7 +42,7 @@ namespace Yugen.Audio.Samples.ViewModels
             _progressBarTimer.Elapsed += (s, e) =>
             {
                 //if (!IsDragging)
-                dispatcherQueue.EnqueueAsync(() =>
+                dispatcherQueue.TryEnqueue(() =>
                 {
                     OnPropertyChanged(nameof(Bpm));
                     OnPropertyChanged(nameof(Position));

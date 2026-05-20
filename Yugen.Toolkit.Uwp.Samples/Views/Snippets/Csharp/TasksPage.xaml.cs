@@ -1,5 +1,4 @@
-﻿using Microsoft.Toolkit.Uwp;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
@@ -115,7 +114,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp
             var start = DateTime.Now.Ticks;
             await Task.Delay(delay);
             var end = DateTime.Now.Ticks;
-            await _dispatcherQueue.EnqueueAsync(() =>
+            _dispatcherQueue.TryEnqueue(() =>
             {
                 MyCollection.Add($"{content}: {start}/{end}");
             });
@@ -128,7 +127,7 @@ namespace Yugen.Toolkit.Uwp.Samples.Views.Snippets.Csharp
                 var start = DateTime.Now.Ticks;
                 await Task.Delay(delay);
                 var end = DateTime.Now.Ticks;
-                await _dispatcherQueue.EnqueueAsync(() =>
+                _dispatcherQueue.TryEnqueue(() =>
                 {
                     MyCollection.Add($"{content}: {start}/{end}");
                 });

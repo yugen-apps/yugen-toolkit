@@ -1,0 +1,32 @@
+namespace ScreenSenderComponent
+{
+	struct AudioClientBufferDetails
+	{
+		Int64 DataPointer;
+		Int64 ByteLength;
+		Int32 NumSamplesToRead;
+		Int32 ChannelCount;
+		Int32 BytesPerMonoSample;
+		Int32 BytesPerSample;
+	};
+
+	// Returns the number of frames actually read by the consumer.
+	delegate Int32 AudioClientBufferReadyHandler(AudioClientBufferDetails details);
+
+	[default_interface]
+	runtimeclass LoopbackAudioCapture
+	{
+		LoopbackAudioCapture(String renderDevice);
+
+		AudioClientBufferReadyHandler BufferReadyDelegate;
+		Windows.Media.MediaProperties.AudioEncodingProperties SuggestedEncodingProperties;
+		Windows.Media.MediaProperties.AudioEncodingProperties EncodingProperties{ get; };
+		Boolean Started{ get; };
+		Int32 SamplesPerQuantum{ get; };
+		String Device{ get; };
+
+		Windows.Foundation.IAsyncAction Start();
+		Windows.Foundation.IAsyncAction Stop();
+		void ChangeDevice(String renderDevice);
+	}
+}

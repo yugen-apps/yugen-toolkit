@@ -7,7 +7,7 @@
       xmlns:controls="using:Yugen.Audio.Samples.Views.Controls"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <interactivity:Interaction.Behaviors>
+    <!--<interactivity:Interaction.Behaviors>
         <interactivity:EventTriggerBehavior EventName="Loaded">
             <interactivity:InvokeCommandAction Command="{x:Bind ViewModel.OnLoadCommand}" />
         </interactivity:EventTriggerBehavior>
@@ -23,11 +23,11 @@
         <Button Content="Play"
                 Command="{x:Bind ViewModel.PlayCommand}" />
 
-        <!--<Button Content="PlayWithoutStreaming"
+        --><!--<Button Content="PlayWithoutStreaming"
                 Command="{x:Bind ViewModel.PlayWithoutStreamingCommand}" />-->
 
         <!--<Button Content="Record"
-                Command="{x:Bind ViewModel.RecordCommand}" />-->
+                Command="{x:Bind ViewModel.RecordCommand}" />--><!--
 
         <Button Content="Stop"
                 Command="{x:Bind ViewModel.StopCommand}" />
@@ -42,5 +42,5 @@
                 TickPlacement="Outside"
                 Value="{x:Bind ViewModel.Volume, Mode=TwoWay}"
                 Width="400" />
-    </StackPanel>
+    </StackPanel>-->
 </Page>

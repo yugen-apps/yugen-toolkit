@@ -20,8 +20,6 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.ViewModel
             _apiService = apiService;
             _dataService = dataService;
 
-            Values = new ObservableCollection<ValueModel>();
-
             SetupValues();
         }
 
@@ -40,9 +38,9 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.ViewModel
 
         public bool CanSync => _isSynching == false;
 
-        public ObservableCollection<ValueModel> Values { get; }
+        public ObservableCollection<ValueModel> Values { get; set; } = [];
 
-        public ValueModel SelectedValueModel
+		public ValueModel SelectedValueModel
         {
             get => _selectedValueModel;
 

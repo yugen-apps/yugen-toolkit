@@ -1,9 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Yugen.Toolkit.Standard.Printer</AssemblyName>
-    <RootNamespace>Yugen.Toolkit.Standard.Printer</RootNamespace>
+	  <TargetFramework>net10.0</TargetFramework>
   </PropertyGroup>
 
 </Project>

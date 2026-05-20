@@ -30,6 +30,8 @@ namespace Yugen.Audio.Samples.Views
 
         public TimeSpan? PresentationTime => throw new NotImplementedException();
 
-        public VisualizationDataFrame GetData() => Frame;
+		public float? ActualFrequencyStep => throw new NotImplementedException();
+
+		public VisualizationDataFrame GetData() => Frame;
     }
 }

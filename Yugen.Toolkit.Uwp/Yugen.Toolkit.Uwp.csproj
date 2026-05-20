@@ -1,24 +1,13 @@
-﻿<Project Sdk="MSBuild.Sdk.Extras">
-	
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFrameworks>uap10.0.26100</TargetFrameworks>
-		<TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
-		<TargetPlatformRevision>26100</TargetPlatformRevision>
-		<TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
-		<TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
-		<TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
-		<DebugType>Portable</DebugType>
-		<GenerateLibraryLayout>true</GenerateLibraryLayout>
-		<IsPackable>true</IsPackable>
-		<IsPublishable>true</IsPublishable>
-		<ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
-		<EmbedUntrackedSources>true</EmbedUntrackedSources>
-		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-		<RootNamespace>Yugen.Toolkit.Uwp</RootNamespace>
+		<TargetFramework>net10.0-windows10.0.26100.0</TargetFramework>
+		<TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
+		<UseUwp>true</UseUwp>
 		<Platforms>x64;ARM64</Platforms>
-		<RuntimeIdentifiers>win10-x64;win-arm64</RuntimeIdentifiers>
-		<NoWarn>$(NoWarn);NETSDK1023</NoWarn>
-		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+		<DefaultLanguage>en-US</DefaultLanguage>
+		<IsAotCompatible>true</IsAotCompatible>
+		<DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
 	</PropertyGroup>
 
 	<PropertyGroup>
@@ -55,7 +44,6 @@
 
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Common" Version="8.4.2" />
-		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed" Version="3.0.1" />
 		<PackageReference Include="System.Text.Json" Version="10.0.8" />
 	</ItemGroup>

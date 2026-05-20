@@ -1,0 +1,31 @@
+namespace ScreenSenderComponent
+{
+	delegate void InputFrameRequestedHandler(Int32 requiredSamples);
+
+	struct AudioBufferInfo
+	{
+		Int64 DataLocation;
+		UInt32 DataLength;
+	};
+
+	[default_interface]
+	runtimeclass AudioGraphHelper
+	{
+		AudioGraphHelper();
+
+		Windows.Media.Audio.AudioFrameOutputNode FrameOutputNode;
+		Windows.Media.Audio.AudioFrameInputNode FrameInputNode;
+		Windows.Media.Audio.AudioGraph AudioGraph;
+
+		event InputFrameRequestedHandler InputFrameRequested;
+
+		void LockFrameOutputNodeBuffer();
+		void UnlockFrameOutputNodeBuffer();
+
+		void RegisterInputFrameEvent();
+		void UnregisterInputFrameEvent();
+
+		Int64 CreateInputAudioFrame(UInt32 length);
+		void EndInputAudioFrame();
+	}
+}

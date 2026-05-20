@@ -82,7 +82,7 @@ namespace Yugen.Toolkit.Uwp.Services
         private ElementTheme LoadThemeFromSettingsAsync()
         {
             ElementTheme cacheTheme = ElementTheme.Default;
-            var themeName = SettingsHelper.Read<string>(SettingsKey);
+            var themeName = SettingsHelper.Read<string>(SettingsKey, HelperJsonSerializerContext.Default.String);
 
             if (!string.IsNullOrEmpty(themeName))
             {
@@ -93,6 +93,6 @@ namespace Yugen.Toolkit.Uwp.Services
         }
 
         private void SaveThemeInSettingsAsync(ElementTheme theme) =>
-            SettingsHelper.Write(SettingsKey, theme.ToString());
+            SettingsHelper.Write(SettingsKey, theme.ToString(), HelperJsonSerializerContext.Default.String);
     }
 }

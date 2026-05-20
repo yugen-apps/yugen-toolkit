@@ -15,7 +15,6 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 using Yugen.Audio.Samples.Interfaces;
 using Yugen.Audio.Samples.Services;
-using Yugen.Audio.Samples.ViewModels.Controls;
 using Yugen.Audio.Samples.ViewModels;
 using Yugen.Toolkit.Standard.Data.Extensions;
 using Yugen.Toolkit.Standard.Data.Sample;
@@ -72,8 +71,8 @@ namespace Yugen.Toolkit.Uwp.Samples
         }
 
         public new static App Current => (App)Application.Current;
-
-        public IServiceProvider Services { get; }
+		
+		public IServiceProvider Services { get; }
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
@@ -210,15 +209,15 @@ namespace Yugen.Toolkit.Uwp.Samples
                 .AddTransient<FindControlViewModel>()
                 .AddTransient<ObservableSettingsViewModel>()
                 .AddSingleton<AudioFrameInputNodeViewModel>()
-                .AddSingleton<AudioGraphViewModel>()
+                //.AddSingleton<AudioGraphViewModel>()
                 .AddSingleton<BassViewModel>()
                 .AddSingleton<CsCoreViewModel>()
                 .AddSingleton<SharpDXViewModel>()
-                .AddSingleton<VuBarsVieModel>()
+                //.AddSingleton<VuBarsVieModel>()
                 .AddSingleton<DeckViewModel>()
                 .AddSingleton<VinylViewModel>()
                 .AddSingleton<WaveformViewModel>()
-                .AddSingleton<LoopbackAudioCaptureViewModel>()
+                //.AddSingleton<LoopbackAudioCaptureViewModel>()
                 // Log
                 .AddLogging(loggingBuilder =>
                 {
@@ -234,7 +233,7 @@ namespace Yugen.Toolkit.Uwp.Samples
         {
             var bloggingContext = Services.GetService<BloggingContext>();
             //var isCreated = bloggingContext.Database.EnsureCreated();
-            bloggingContext.Database.Migrate();
+            //bloggingContext.Database.Migrate();
 
             await Services.GetService<IThemeSelectorService>().InitializeAsync();
             await AudioDevicesHelper.Initialize();

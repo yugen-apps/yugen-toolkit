@@ -34,7 +34,7 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             {
                 var buffer = await FileIO.ReadBufferAsync((IStorageFile)valuesFile);
                 var content = await DecryptBufferAsync(buffer);
-                var values = JsonSerializer.Deserialize<List<ValueModel>>(content);
+                var values = JsonSerializer.Deserialize<List<ValueModel>>(content, AppJsonSerializerContext.Default.ListValueModel);
 
                 foreach (var valueModel in values)
                 {
@@ -48,7 +48,7 @@ namespace Yugen.Toolkit.Uwp.CodeChallenge.Services
             Values = values;
 
             var valuesFile = await ApplicationData.Current.LocalFolder.CreateFileAsync("Values.txt", CreationCollisionOption.ReplaceExisting);
-            var json = JsonSerializer.Serialize(Values);
+            var json = JsonSerializer.Serialize(Values, AppJsonSerializerContext.Default.ListValueModel);
             var encryptedData = EncryptJson(json);
 
             await FileIO.WriteBytesAsync(valuesFile, encryptedData);

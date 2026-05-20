@@ -33,7 +33,7 @@
             <ListView
                 AllowDrop="True"
                 CanReorderItems="True"
-                ItemsSource="{x:Bind ViewModel.Values}"
+                ItemsSource="{x:Bind ViewModel.Values, Mode=OneWay}"
                 SelectedItem="{x:Bind ViewModel.SelectedValueModel, Mode=TwoWay}"
                 SelectionMode="Single">
 
@@ -47,7 +47,7 @@
 
             </ListView>
 
-            <StackPanel
+			<StackPanel
                 Grid.Column="1"
                 Margin="24,0"
                 Visibility="{x:Bind ViewModel.HasSelectedModel, Mode=OneWay}">

@@ -4,8 +4,7 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
-      xmlns:icons="using:Fluent.Icons"
+	  xmlns:ui="using:CommunityToolkit.WinUI"
       mc:Ignorable="d"
       Background="DarkRed">
 
@@ -50,10 +49,10 @@
                        TextWrapping="Wrap" />
             <Button Foreground="White">
                 <StackPanel Orientation="Horizontal">
-                    <icons:FluentSymbolIcon Symbol="Bug24"
+                    <!--<icons:FluentSymbolIcon Symbol="Bug24"
                                             VerticalAlignment="Center"
                                             Margin="0,0,4,0"
-                                            Foreground="Red" />
+                                            Foreground="Red" />-->
                     <TextBlock VerticalAlignment="Center">Report the error</TextBlock>
                 </StackPanel>
             </Button>
