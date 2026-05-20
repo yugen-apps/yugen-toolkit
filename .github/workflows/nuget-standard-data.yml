@@ -14,8 +14,6 @@ permissions:
 jobs:
   setup_stage:
     uses: yugen-apps/yugen-templates/.github/workflows/setup.yml@main
-    with:
-      project_name: "Yugen.Toolkit.Standard.Data"
 
   build_pack_stage:    
     uses: yugen-apps/yugen-templates/.github/workflows/build-msbuild-pack.yml@main

@@ -80,14 +80,11 @@
     <EmbeddedResource Include="Properties\Yugen.Toolkit.Uwp.Audio.Services.Bass.rd.xml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="ManagedBass">
-      <Version>3.1.1</Version>
-    </PackageReference>
     <PackageReference Include="ManagedBass.Fx">
-      <Version>3.1.1</Version>
+      <Version>4.0.2</Version>
     </PackageReference>
     <PackageReference Include="ManagedBass.Mix">
-      <Version>3.1.1</Version>
+      <Version>4.0.2</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
       <Version>6.2.14</Version>
