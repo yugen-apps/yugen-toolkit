@@ -4,12 +4,10 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Windows.Storage;
-using Yugen.Audio.Samples.Interfaces;
-using Yugen.Audio.Samples.Models;
 
 namespace Yugen.Audio.Samples.Services
 {
-    public class BassPlayer : IAudioPlayer
+    public class BassPlayer 
     {
         private const int _bpmPeriod = 30;
 
@@ -81,7 +79,7 @@ namespace Yugen.Audio.Samples.Services
 
         public bool IsRepeating { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public AudioPlayerState State => throw new NotImplementedException();
+        //public AudioPlayerState State => throw new NotImplementedException();
 
         /// <summary>
         /// Gets or Sets the Volume (0 ... 1.0).
@@ -136,7 +134,7 @@ namespace Yugen.Audio.Samples.Services
 
         public Task Load(Stream audioStream) => throw new NotImplementedException();
 
-        public Task Load(byte[] audioBytes)
+        public Task LoadSong(byte[] audioBytes)
         {
             _audioBytes = audioBytes;
 
@@ -317,5 +315,27 @@ namespace Yugen.Audio.Samples.Services
 
             _beatPosition = Bass.ChannelBytes2Seconds(Channel, Bass.ChannelGetPosition(Channel)) / BassFx.TempoGetRateRatio(Channel);
         }
-    }
+
+		public void ChangeVolume(double value, int v)
+		{
+			Volume = value;
+		}
+
+		public void ChangePitch(double value)
+		{
+		    Pitch = value;
+		}
+
+		public void TogglePlay(bool isPaused)
+		{
+			if (isPaused)
+			{
+                Pause();
+			}
+			else
+			{
+                Play();
+			}
+		}
+	}
 }

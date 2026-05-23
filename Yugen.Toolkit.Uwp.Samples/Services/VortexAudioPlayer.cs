@@ -34,7 +34,7 @@ namespace Yugen.Audio.Samples.Services
 
         public void Initialize(string deviceId, int inputChannels = 2, int inputSampleRate = 44100)
         {
-            _masteringVoice = _xaudio2.CreateMasteringVoice(inputChannels, inputSampleRate);
+            _masteringVoice = _xaudio2.CreateMasteringVoice((uint)inputChannels, (uint)inputSampleRate);
         }
 
         public Task Load(StorageFile tmpAudioFile)

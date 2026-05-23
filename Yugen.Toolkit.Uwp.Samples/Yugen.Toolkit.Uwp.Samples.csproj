@@ -20,14 +20,12 @@
 			<PackageReference Include="Fluent.Icons" Version="1.1.110" />
 			<PackageReference Include="UWPAudioVisualizer" Version="1.0.38" />
 		-->
+		<PackageReference Include="CSCore-Core" Version="1.0.1-beta" />
 		<PackageReference Include="Microsoft.Windows.CsWinRT" Version="2.3.0-prerelease.251115.2" />
 		<PackageReference Include="CommunityToolkit.Common" Version="8.4.2" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.2" />
 		<PackageReference Include="CommunityToolkit.Uwp.Extensions" Version="8.2.251219" />
 		<PackageReference Include="CommunityToolkit.Uwp.Helpers" Version="8.2.251219" />
-		<PackageReference Include="CSCore" Version="1.2.1.2" />
-		<PackageReference Include="ManagedBass.Fx" Version="4.0.2" />
-		<PackageReference Include="ManagedBass.Mix" Version="4.0.2" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="10.0.8" />
 		<PackageReference Include="Microsoft.UI.Xaml" Version="2.8.7" />
 		<PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed" Version="3.0.1" />
@@ -38,8 +36,7 @@
 		<PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
 		<PackageReference Include="SharpDX.MediaFoundation" Version="4.2.0" />
 		<PackageReference Include="SharpDX.XAudio2" Version="4.2.0" />
-		<PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
-		<PackageReference Include="Vortice.XAudio2" Version="2.4.2" />
+		<PackageReference Include="Vortice.XAudio2" Version="3.8.3" />
 		<PackageReference Include="Win2D.uwp" Version="1.28.3" />
 	</ItemGroup>
 
@@ -52,6 +49,7 @@
 		<ProjectReference Include="..\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj" />
 		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Controls\Yugen.Toolkit.Uwp.Audio.Controls.csproj" />
 		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Abstractions\Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj" />
+		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Bass\Yugen.Toolkit.Uwp.Audio.Services.Bass.csproj" />
 		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Common\Yugen.Toolkit.Uwp.Audio.Services.Common.csproj" />
 		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.NAudio\Yugen.Toolkit.Uwp.Audio.Services.NAudio.csproj" />
 		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Controls\Yugen.Toolkit.Uwp.Controls.csproj" />

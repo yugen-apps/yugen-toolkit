@@ -23,6 +23,19 @@
     <File Path="Docs/icon.png" />
     <File Path="Docs/README.md" />
   </Folder>
+  <Folder Name="/Solution Items/Libs/">
+    <File Path="Libs/Versions.txt" />
+  </Folder>
+  <Folder Name="/Solution Items/Libs/ARM64/">
+    <File Path="Libs/ARM64/bass.dll" />
+    <File Path="Libs/ARM64/bassmix.dll" />
+    <File Path="Libs/ARM64/bass_fx.dll" />
+  </Folder>
+  <Folder Name="/Solution Items/Libs/x64/">
+    <File Path="Libs/x64/bass.dll" />
+    <File Path="Libs/x64/bassmix.dll" />
+    <File Path="Libs/x64/bass_fx.dll" />
+  </Folder>
   <Folder Name="/Solution Items/Snippets/" />
   <Folder Name="/Solution Items/Snippets/CS/">
     <File Path="Snippets/Cs/AsyncRelayCommand.snippet" />

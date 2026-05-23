@@ -10,13 +10,18 @@
 		<DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Win2D.uwp" Version="1.28.3" />
-  </ItemGroup>
+	<PropertyGroup>
+		<Author>panda-sharp</Author>
+		<Solution>Yugen.Toolkit</Solution>
+		<Project>Yugen.Toolkit.Uwp.Audio.Controls</Project>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj"/>
-    <ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj"/>
-  </ItemGroup>
-  
+	<ItemGroup>
+		<PackageReference Include="Win2D.uwp" Version="1.28.3" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Yugen.Toolkit.Standard\Yugen.Toolkit.Standard.csproj" />
+		<ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj" />
+	</ItemGroup>
 </Project>

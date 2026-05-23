@@ -15,9 +15,10 @@ namespace Yugen.Audio.Samples.ViewModels
 {
     public class CsCoreViewModel : ViewModelBase
     {
-        private readonly IAudioPlayer _audioPlayer = new CsCoreAudioPlayer();
+        //private readonly IAudioPlayer _audioPlayer = new CsCoreAudioPlayer();
+        private readonly IAudioPlayer _audioPlayer = new VortexAudioPlayer();
 
-        public CsCoreViewModel()
+		public CsCoreViewModel()
         {
             OnLoadCommand = new RelayCommand(OnLoadCommandBehavior);
             OpenCommand = new AsyncRelayCommand(OpenCommandBehavior);

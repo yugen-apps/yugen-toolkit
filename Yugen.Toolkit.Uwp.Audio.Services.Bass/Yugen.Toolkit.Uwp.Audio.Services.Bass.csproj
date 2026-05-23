@@ -10,14 +10,29 @@
 		<DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
 	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="ManagedBass.Fx" Version="4.0.2" />
-    <PackageReference Include="ManagedBass.Mix" Version="4.0.2" />
-  </ItemGroup>
+	<PropertyGroup>
+		<Author>panda-sharp</Author>
+		<Solution>Yugen.Toolkit</Solution>
+		<Project>Yugen.Toolkit.Uwp.Audio.Services.Bass</Project>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Abstractions\Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj"/>
-    <ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj"/>
-  </ItemGroup>
-  
+	<ItemGroup>
+		<PackageReference Include="ManagedBass.Fx" Version="4.0.2" />
+		<PackageReference Include="ManagedBass.Mix" Version="4.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Abstractions\Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj"/>
+		<ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj"/>
+	</ItemGroup>
+
+	<ItemGroup>
+		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
+		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
+		<!-- Bass Libs -->
+		<Content Include="runtimes\**\*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<PackagePath>\lib\net10.0-windows10.0.26100\$(Project)\runtimes</PackagePath>
+		</Content>
+	</ItemGroup>
 </Project>

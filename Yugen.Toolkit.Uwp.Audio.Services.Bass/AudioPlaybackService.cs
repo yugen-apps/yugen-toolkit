@@ -37,8 +37,14 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
 
         public AudioFileInputNode MasterFileInput => throw new NotImplementedException();
 
-        public Task Initialize()
+        public async Task Initialize()
         {
+            await BassHelper.TryCopyDll();
+
+			var isInitialized0 = ManagedBass.Bass.Init(0);
+            var isInitialized1 = ManagedBass.Bass.Init(1);
+            var isInitialized2 = ManagedBass.Bass.Init(2);
+            var isInitialized3 = ManagedBass.Bass.Init(3);
             _progressBarTimer.Elapsed += (s, e) =>
             {
                 var position = TimeSpan.FromSeconds(ManagedBass.Bass.ChannelBytes2Seconds(_primarySplitStream, ManagedBass.Bass.ChannelGetPosition(_primarySplitStream)));
@@ -46,7 +52,6 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
                 RmsChanged?.Invoke(this, GetRms());
             };
             _progressBarTimer.Start();
-            return Task.CompletedTask;
         }
 
         public void ChangePitch(double pitch)
@@ -205,6 +210,5 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
 
             return (float)dB;
         }
-
     }
 }

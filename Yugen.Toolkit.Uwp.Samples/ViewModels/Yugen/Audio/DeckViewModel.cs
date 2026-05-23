@@ -5,20 +5,19 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Windows.Storage.Pickers;
 using Windows.System;
-using Yugen.Audio.Samples.Interfaces;
-using Yugen.Audio.Samples.Services;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Audio.Services.Abstractions;
+using Yugen.Toolkit.Uwp.Audio.Services.Bass;
 using Yugen.Toolkit.Uwp.Extensions;
 using Yugen.Toolkit.Uwp.Helpers;
 
 namespace Yugen.Audio.Samples.ViewModels
 {
     public class DeckViewModel : ViewModelBase
-    {
-        private readonly IAudioPlayer _audioPlayer = new BassPlayer();
+	{
+		private IAudioPlaybackService _audioPlayer = new AudioPlaybackService(new AudioDeviceService());
 
-        private readonly IWaveformService _waveformService;
+		private readonly IWaveformService _waveformService;
         private IBPMService _bpmService;
         private double _bpm;
         private List<(float min, float max)> _peakList;
@@ -30,7 +29,7 @@ namespace Yugen.Audio.Samples.ViewModels
             _bpmService = bpmService;
             _waveformService = waveformRendererService;
 
-            _audioPlayer.Initialize("");
+            _audioPlayer.Initialize();
 
             OpenCommand = new AsyncRelayCommand(OpenCommandBehavior);
             PlayCommand = new RelayCommand(PlayCommandBehavior);
@@ -74,7 +73,7 @@ namespace Yugen.Audio.Samples.ViewModels
             if (audioFile != null)
             {
                 var bytes = await audioFile.ReadBytesAsync();
-                await _audioPlayer.Load(bytes);
+                await _audioPlayer.LoadSong(bytes);
 
                 var stream = await audioFile.OpenStreamForReadAsync();
 
@@ -103,7 +102,7 @@ namespace Yugen.Audio.Samples.ViewModels
 
         private void PlayCommandBehavior()
         {
-            _audioPlayer.Play();
+            _audioPlayer.TogglePlay(false);
         }
     }
 }

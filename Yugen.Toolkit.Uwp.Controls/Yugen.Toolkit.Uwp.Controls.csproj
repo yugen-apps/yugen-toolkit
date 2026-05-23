@@ -46,7 +46,9 @@
 		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
 		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
 		<!-- XAML control -->
-		<None Include="bin\Release\$(TargetFrameworks)\Yugen.Toolkit.Uwp.Controls\**\*.xaml" Pack="true" PackagePath="\lib\$(TargetFrameworks)\Yugen.Toolkit.Uwp.Controls" />
+		<None Include="bin\Release\$(TargetFramework)\$(Project)\**\*.xaml"
+			  PackagePath="\lib\net10.0-windows10.0.26100\$(Project)" 
+			  Pack="true" />
 	</ItemGroup>
 
 	<ItemGroup>
