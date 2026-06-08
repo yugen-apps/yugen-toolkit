@@ -1,149 +1,55 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E32CC781-64B3-4B05-BECE-C9E5F69E01B6}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Yugen.Toolkit.Uwp.Audio.Services.Bass</RootNamespace>
-    <AssemblyName>Yugen.Toolkit.Uwp.Audio.Services.Bass</AssemblyName>
-    <DefaultLanguage>en-US</DefaultLanguage>
-    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
-    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.22000.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
-    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
-    <PlatformTarget>ARM64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\ARM64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
-    <PlatformTarget>ARM64</PlatformTarget>
-    <OutputPath>bin\ARM64\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>full</DebugType>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <PlatformTarget>x64</PlatformTarget>
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
-    <Optimize>true</Optimize>
-    <NoWarn>;2008</NoWarn>
-    <DebugType>pdbonly</DebugType>
-    <UseVSHostingProcess>false</UseVSHostingProcess>
-    <ErrorReport>prompt</ErrorReport>
-    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-  </PropertyGroup>
-  <PropertyGroup>
-    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
-  </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="AudioDeviceService.cs" />
-    <Compile Include="AudioPlaybackService.cs" />
-    <Compile Include="Providers\AudioPlaybackServiceProvider.cs" />
-    <Compile Include="BPMService.cs" />
-    <Compile Include="DockService.cs" />
-    <Compile Include="MixerService.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Providers\DockServiceProvider.cs" />
-    <Compile Include="TrackService.cs" />
-    <Compile Include="WaveformService.cs" />
-    <Compile Include="YugenBass.cs" />
-    <Compile Include="YugenDeviceInfo.cs" />
-    <EmbeddedResource Include="Properties\Yugen.Toolkit.Uwp.Audio.Services.Bass.rd.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="ManagedBass">
-      <Version>3.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="ManagedBass.Fx">
-      <Version>3.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="ManagedBass.Mix">
-      <Version>3.1.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
-      <Version>6.2.14</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Toolkit.Uwp">
-      <Version>7.1.3</Version>
-    </PackageReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Abstractions\Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj">
-      <Project>{BDD73429-0041-47D2-9CA9-8D669FFC4CDD}</Project>
-      <Name>Yugen.Toolkit.Uwp.Audio.Services.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj">
-      <Project>{e535535b-b033-4f77-bd09-2c6ef2054b5d}</Project>
-      <Name>Yugen.Toolkit.Uwp</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <!-- https://stackoverflow.com/questions/18743907/visual-studio-how-to-copy-to-output-directory-without-copying-the-folder-stru
-  <ItemGroup Condition="'$(Platform)' == 'x64'">
-    <Content Include="..\Libs\x64\bass.dll">
-      <Link>bass.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Libs\x64\bass_fx.dll">
-      <Link>bass_fx.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Libs\x64\bassmix.dll">
-      <Link>bassmix.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Platform)' == 'ARM64'">
-    <Content Include="..\Libs\ARM64\bass.dll">
-      <Link>bass.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Libs\ARM64\bass_fx.dll">
-      <Link>bass_fx.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\Libs\ARM64\bassmix.dll">
-      <Link>bassmix.dll</Link>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup> -->
-  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
-    <VisualStudioVersion>14.0</VisualStudioVersion>
-  </PropertyGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
+﻿<Project Sdk="MSBuild.Sdk.Extras">
+
+	<PropertyGroup>
+		<TargetFrameworks>uap10.0.26100</TargetFrameworks>
+		<LangVersion>8.0</LangVersion>
+		<TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
+		<TargetPlatformRevision>26100</TargetPlatformRevision>
+		<TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
+		<TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
+		<TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
+		<ExtrasUwpMetaPackageVersion>6.2.14</ExtrasUwpMetaPackageVersion>
+		<DebugType>Portable</DebugType>
+		<GenerateLibraryLayout>true</GenerateLibraryLayout>
+		<IsPackable>true</IsPackable>
+		<IsPublishable>true</IsPublishable>
+		<ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
+		<EmbedUntrackedSources>true</EmbedUntrackedSources>
+		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
+		<Platforms>x64;ARM64</Platforms>
+		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+		<NoWarn>$(NoWarn);NETSDK1023</NoWarn>
+		<GenerateDocumentationFile>True</GenerateDocumentationFile>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<Description>
+			This package includes audio services for Bass library...
+			It is part of the Yugen Toolkit.
+		</Description>
+		<PackageId>Yugen.Toolkit.Uwp.Audio.Services.Bass</PackageId>
+		<PackageTags>Yugen Toolkit Uwp Audio Services Bass</PackageTags>
+		<Title>$(PackageId)</Title>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- Bass Libs -->
+		<!-- <Content Include="runtimes\**\*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+			<PackagePath>\lib\uap10.0.$(TargetPlatformMinRevision)\$(PackageId)\runtimes</PackagePath>
+		</Content> -->
+		<None Include="runtimes\**\*"
+			  PackagePath="\lib\uap10.0.$(TargetPlatformMinRevision)\$(PackageId)\runtimes"
+			  Pack="true" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="ManagedBass.Fx" Version="4.0.2" />
+		<PackageReference Include="ManagedBass.Mix" Version="4.0.2" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\Yugen.Toolkit.Uwp.Audio.Services.Abstractions\Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj" />
+		<ProjectReference Include="..\Yugen.Toolkit.Uwp\Yugen.Toolkit.Uwp.csproj"/>
+	</ItemGroup>
 </Project>

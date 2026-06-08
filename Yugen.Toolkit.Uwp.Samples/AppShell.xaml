@@ -5,7 +5,6 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
       xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
       xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
-      xmlns:core="using:Microsoft.Xaml.Interactions.Core"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -16,9 +15,9 @@
                              IsSettingsVisible="True"
                              MenuItemsSource="{x:Bind ViewModel.NavItems, Mode=OneWay}">
             <interactivity:Interaction.Behaviors>
-                <core:EventTriggerBehavior EventName="ItemInvoked">
-                    <core:InvokeCommandAction Command="{x:Bind ViewModel.NavigationViewOnItemInvokedCommand}" />
-                </core:EventTriggerBehavior>
+                <interactivity:EventTriggerBehavior EventName="ItemInvoked">
+                    <interactivity:InvokeCommandAction Command="{x:Bind ViewModel.NavigationViewOnItemInvokedCommand}" />
+                </interactivity:EventTriggerBehavior>
             </interactivity:Interaction.Behaviors>
 
             <ScrollViewer>

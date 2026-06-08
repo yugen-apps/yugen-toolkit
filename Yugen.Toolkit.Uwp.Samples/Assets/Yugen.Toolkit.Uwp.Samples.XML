@@ -706,26 +706,6 @@
             Program class
             </summary>
         </member>
-        <member name="T:Yugen.Toolkit.Uwp.Samples.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider">
-            <summary>
-            Main class for providing metadata for the app or library
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
-            <summary>
-            GetXamlType(Type)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
-            <summary>
-            GetXamlType(String)
-            </summary>
-        </member>
-        <member name="M:Yugen.Toolkit.Uwp.Samples.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
-            <summary>
-            GetXmlnsDefinitions()
-            </summary>
-        </member>
         <member name="F:Yugen.Audio.Samples.Models.AudioPlayerState.Stopped">
             <summary>
             The player is stopped (default).
@@ -739,21 +719,6 @@
         <member name="F:Yugen.Audio.Samples.Models.AudioPlayerState.Paused">
             <summary>
             The player is paused.
-            </summary>
-        </member>
-        <member name="P:Yugen.Audio.Samples.Services.BassPlayer.Volume">
-            <summary>
-            Gets or Sets the Volume (0 ... 1.0).
-            </summary>
-        </member>
-        <member name="P:Yugen.Audio.Samples.Services.BassPlayer.Pitch">
-            <summary>
-            Gets or Sets the Pitch in Semitones (-60 ... 0 ... 60).
-            </summary>
-        </member>
-        <member name="P:Yugen.Audio.Samples.Services.BassPlayer.Tempo">
-            <summary>
-            Gets or Sets the Tempo in Percentage (-95% ... 0 ... 5000%)
             </summary>
         </member>
         <member name="M:Yugen.Audio.Samples.Services.SharpDXAudioPlayer.#ctor">
@@ -999,26 +964,24 @@
             GetBindingConnector(int connectionId, object target)
             </summary>
         </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullAttribute">
+        <member name="T:XamlDefaultRootNamespace.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider">
             <summary>
-            Specifies that an output will not be null even if the corresponding type allows it.
-            Also specifies that an input argument was not null when the call returns.
+            Main class for providing metadata for the app or library
             </summary>
         </member>
-        <member name="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute">
+        <member name="M:XamlDefaultRootNamespace.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.Type)">
             <summary>
-            Specifies that the output will be non-null if the named parameter is non-null.
+            GetXamlType(Type)
             </summary>
         </member>
-        <member name="M:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.#ctor(System.String)">
+        <member name="M:XamlDefaultRootNamespace.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXamlType(System.String)">
             <summary>
-            Initializes a new instance of the <see cref="T:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute"/> class.
+            GetXamlType(String)
             </summary>
-            <param name="parameterName"> The associated parameter name. The output will be non-null if the argument to the parameter specified is non-null.</param>
         </member>
-        <member name="P:System.Diagnostics.CodeAnalysis.NotNullIfNotNullAttribute.ParameterName">
+        <member name="M:XamlDefaultRootNamespace.Yugen_Toolkit_Uwp_Samples_XamlTypeInfo.XamlMetaDataProvider.GetXmlnsDefinitions">
             <summary>
-            Gets the associated parameter name.
+            GetXmlnsDefinitions()
             </summary>
         </member>
     </members>

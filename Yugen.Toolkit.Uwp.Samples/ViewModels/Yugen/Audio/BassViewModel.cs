@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.Toolkit.Uwp;
-using Microsoft.Toolkit.Uwp.Helpers;
+using CommunityToolkit.WinUI;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -12,6 +11,7 @@ using Yugen.Audio.Samples.Services;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Audio.Services.Common.Helpers;
 using Yugen.Toolkit.Uwp.Helpers;
+using Yugen.Toolkit.Uwp.Extensions;
 
 namespace Yugen.Audio.Samples.ViewModels
 {
@@ -57,10 +57,10 @@ namespace Yugen.Audio.Samples.ViewModels
             get => _audioPlayer.Position.TotalSeconds;
             set
             {
-                if (SetProperty(ref _position, value))
-                {
-                    _audioPlayer.Position = TimeSpan.FromSeconds(value);
-                }
+                //if (SetProperty(ref _position, value))
+                //{
+                //    _audioPlayer.Position = TimeSpan.FromSeconds(value);
+                //}
             }
         }
 
@@ -168,9 +168,9 @@ namespace Yugen.Audio.Samples.ViewModels
 
         public ICommand StopCommand { get; }
 
-        public void OnLoadCommandBehavior()
+        public async void OnLoadCommandBehavior()
         {
-            _audioPlayer.Initialize(AudioDevicesHelper.MasterAudioDeviceInformation.Id);
+            await _audioPlayer.Initialize(AudioDevicesHelper.MasterAudioDeviceInformation.Id);
         }
 
         private async Task OpenCommandBehavior()

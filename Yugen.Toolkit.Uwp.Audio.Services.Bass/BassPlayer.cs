@@ -4,12 +4,11 @@ using System;
 using System.IO;
 using System.Threading.Tasks;
 using Windows.Storage;
-using Yugen.Audio.Samples.Interfaces;
-using Yugen.Audio.Samples.Models;
+using Yugen.Toolkit.Uwp.Audio.Services.Bass;
 
 namespace Yugen.Audio.Samples.Services
 {
-    public class BassPlayer : IAudioPlayer
+    public class BassPlayer
     {
         private const int _bpmPeriod = 30;
 
@@ -35,8 +34,9 @@ namespace Yugen.Audio.Samples.Services
 
         public TimeSpan Position
         {
-            get => TimeSpan.FromSeconds(Bass.ChannelBytes2Seconds(_handle, Bass.ChannelGetPosition(_handle)));
-            set => Bass.ChannelSetPosition(_handle, Bass.ChannelSeconds2Bytes(_handle, value.TotalSeconds));
+            get => default;
+            //get => TimeSpan.FromSeconds(Bass.ChannelBytes2Seconds(_handle, Bass.ChannelGetPosition(_handle)));
+            //set => Bass.ChannelSetPosition(_handle, Bass.ChannelSeconds2Bytes(_handle, value.TotalSeconds));
         }
 
         public float Rms
@@ -81,7 +81,7 @@ namespace Yugen.Audio.Samples.Services
 
         public bool IsRepeating { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
-        public AudioPlayerState State => throw new NotImplementedException();
+        //public AudioPlayerState State => throw new NotImplementedException();
 
         /// <summary>
         /// Gets or Sets the Volume (0 ... 1.0).
@@ -110,10 +110,12 @@ namespace Yugen.Audio.Samples.Services
             set => Bass.ChannelSetAttribute(_handle, ChannelAttribute.Tempo, value);
         }
 
-        public void Initialize(string deviceId, int inputChannels = 2, int inputSampleRate = 44100)
+        public async Task Initialize(string deviceId, int inputChannels = 2, int inputSampleRate = 44100)
         {
-            //var isInitialized = Bass.Init(-1); // default
-            var isInitialized0 = Bass.Init(0); // no sound IsEnabled IsInitialized Name: N
+            await BassHelper.TryCopyDll();
+
+			//var isInitialized = Bass.Init(-1); // default
+			var isInitialized0 = Bass.Init(0); // no sound IsEnabled IsInitialized Name: N
             var isInitialized1 = Bass.Init(1); // speakers IsDefault Driver IsEnabled IsInitialized Name: D
             var isInitialized2 = Bass.Init(2); // headphones Driver IsEnabled IsInitialized Name: H
             var isInitialized3 = Bass.Init(3); // speakers IsDefault IsEnabled IsInitialized Name: D

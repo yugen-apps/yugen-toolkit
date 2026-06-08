@@ -1,0 +1,41 @@
+name: nuget-standard-core-cicd
+
+on:
+  push:
+    branches:
+      - release/*
+      - preview/*
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+  packages: write
+
+jobs:
+  setup_stage:
+    uses: yugen-apps/yugen-templates/.github/workflows/setup.yml@main
+
+  build_pack_stage:    
+    uses: yugen-apps/yugen-templates/.github/workflows/build-msbuild-pack.yml@main
+    needs: [ setup_stage ]
+    with:
+      project_name: "Yugen.Toolkit.Standard.Core"
+      project_version: "${{ needs.setup_stage.outputs.major_minor_patch }}"
+      solution_file: "Yugen.Toolkit.slnx"
+
+  deploy_github_package_stage:
+    uses: yugen-apps/yugen-templates/.github/workflows/deploy-github-package.yml@main
+    needs: [ build_pack_stage ]
+    secrets:
+      gh_token: ${{ secrets.GITHUB_TOKEN }}
+    with:
+      artifact_name: "Yugen.Toolkit.Standard.Core"
+
+  deploy_nuget_stage:
+    uses: yugen-apps/yugen-templates/.github/workflows/deploy-nuget.yml@main
+    needs: [ build_pack_stage ]
+    secrets:
+      nuget_api_key: ${{ secrets.NUGET_API_KEY }}
+    with:
+      artifact_name: "Yugen.Toolkit.Standard.Core"

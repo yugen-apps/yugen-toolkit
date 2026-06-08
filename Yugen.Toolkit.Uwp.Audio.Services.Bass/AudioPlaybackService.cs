@@ -37,16 +37,17 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
 
         public AudioFileInputNode MasterFileInput => throw new NotImplementedException();
 
-        public Task Initialize()
-        {
-            _progressBarTimer.Elapsed += (s, e) =>
+        public async Task Initialize()
+		{
+			await BassHelper.TryCopyDll();
+
+			_progressBarTimer.Elapsed += (s, e) =>
             {
                 var position = TimeSpan.FromSeconds(ManagedBass.Bass.ChannelBytes2Seconds(_primarySplitStream, ManagedBass.Bass.ChannelGetPosition(_primarySplitStream)));
                 PositionChanged?.Invoke(this, position);
                 RmsChanged?.Invoke(this, GetRms());
             };
             _progressBarTimer.Start();
-            return Task.CompletedTask;
         }
 
         public void ChangePitch(double pitch)

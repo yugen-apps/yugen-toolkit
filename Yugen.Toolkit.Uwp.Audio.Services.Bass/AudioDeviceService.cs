@@ -13,9 +13,11 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
 
         public AudioDevice SecondaryDevice { get; set; } = new AudioDevice { Id = 0 };
 
-        public Task Initialize()
-        {
-            for (var i = 0; YugenBass.GetDeviceInfo(i, out var deviceInfo); ++i)
+        public async Task Initialize()
+		{
+			await BassHelper.TryCopyDll();
+
+			for (var i = 0; YugenBass.GetDeviceInfo(i, out var deviceInfo); ++i)
             {
                 if (!string.IsNullOrEmpty(deviceInfo.Driver))
                 {
@@ -42,8 +44,6 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
                 PrimaryDevice = primaryDevice;
             }
             var isPrimaryInitialized = ManagedBass.Bass.Init(PrimaryDevice.Id);
-
-            return Task.CompletedTask;
         }
 
         public double GetMasterVolume() => ManagedBass.Bass.Volume * 100;

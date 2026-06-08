@@ -77,7 +77,7 @@ namespace winrt::AudioVisualizer::implementation
     {
 		using namespace winrt::Windows::Media::Devices;
 		auto audioClient = co_await AudioInterfaceActivator::ActivateAudioInterfaceAsync(MediaDevice::GetDefaultAudioRenderId(AudioDeviceRole::Default).c_str());
-		return *make_self<LoopbackVisualizationSource>(audioClient);
+		co_return *make_self<LoopbackVisualizationSource>(audioClient);
     }
     Windows::Foundation::IAsyncOperation<AudioVisualizer::LoopbackVisualizationSource> LoopbackVisualizationSource::CreateAsync(Windows::Devices::Enumeration::DeviceInformation renderDevice)
     {
@@ -85,7 +85,7 @@ namespace winrt::AudioVisualizer::implementation
 			throw hresult_invalid_argument();
 		}
 		auto audioClient = co_await AudioInterfaceActivator::ActivateAudioInterfaceAsync(renderDevice.Id().c_str());
-		return *make_self<LoopbackVisualizationSource>(audioClient);
+		co_return *make_self<LoopbackVisualizationSource>(audioClient);
 	}
 
     AudioVisualizer::VisualizationDataFrame LoopbackVisualizationSource::GetData()
@@ -204,8 +204,8 @@ namespace winrt::AudioVisualizer::implementation
 		HRESULT hr = _captureClient->GetBuffer((BYTE**)&pSamples, &numFramesToRead, &dwFlags, &devicePosition, nullptr);
 		winrt::get_self<AudioAnalyzer>(_analyzer)->ProcessInputRaw(pSamples, numFramesToRead,devicePosition);
 		hr = _captureClient->ReleaseBuffer(numFramesToRead);
-		_streamPosition = Windows::Foundation::TimeSpan() = { 10000000L * devicePosition / _inputSampleRate };
-		ScheduleWorkItem();
+		_streamPosition = Windows::Foundation::TimeSpan(10000000L * devicePosition / _inputSampleRate);
+		ScheduleWorkItem();		
 		return S_OK;
 	}
 }

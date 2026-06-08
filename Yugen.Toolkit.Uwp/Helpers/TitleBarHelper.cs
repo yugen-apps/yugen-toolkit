@@ -65,9 +65,9 @@ namespace Yugen.Toolkit.Uwp.Helpers
             Window.Current.SetTitleBar(value);
         }
 
-        /// <summary>
-        /// Styles the title bar buttons according to the theme in use
-        /// </summary>
+        // <summary>
+        // Styles the title bar buttons according to the theme in use
+        // </summary>
         //public static void StyleTitleBar(
         //    Color buttonForegroundColor, 
         //    Color buttonHoverBackgroundColor, 

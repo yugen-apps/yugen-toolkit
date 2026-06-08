@@ -32,12 +32,14 @@ namespace Yugen.Toolkit.Uwp.Audio.Controls.Renderers
         public static async Task<VinylRenderer> Create(CanvasAnimatedControl sender)
         {
 #if DEBUG
-            var vinylBitmap = await CanvasBitmap.LoadAsync(sender, "Yugen.Toolkit.Uwp.Audio.Controls/Images/VinylDebug.png");
+            var config = "Debug";
 #else
-            var vinylBitmap = await CanvasBitmap.LoadAsync(sender, "Yugen.Toolkit.Uwp.Audio.Controls/Images/Vinyl.png");
+            var config = "Release";
 #endif
+			var uri = new Uri($"ms-appx:///Yugen.Toolkit.Uwp.Audio.Controls/Images/Vinyl-{config}.png");
+			var vinylBitmap = await CanvasBitmap.LoadAsync(sender, uri);
 
-            return new VinylRenderer(sender, vinylBitmap);
+			return new VinylRenderer(sender, vinylBitmap);
         }
 
         private VinylRenderer(CanvasAnimatedControl sender, CanvasBitmap canvasBitmap)

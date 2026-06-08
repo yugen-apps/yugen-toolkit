@@ -34,8 +34,10 @@
         <Border Grid.Column="1"
                 Grid.Row="1"
                 BorderBrush="Red"
-                BorderThickness="1">
-            <controls:Vinyl x:Name="Vinyl" />
+				BorderThickness="1">
+			<controls:Vinyl x:Name="Vinyl"
+							Height="400"
+							Width="400" />
         </Border>
     </Grid>
 </Page>

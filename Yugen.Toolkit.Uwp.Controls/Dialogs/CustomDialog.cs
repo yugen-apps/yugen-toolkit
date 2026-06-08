@@ -379,7 +379,6 @@ namespace Yugen.Toolkit.Uwp.Controls.Dialogs
         /// <summary>
         /// Event in opening
         /// </summary>
-        /// <param name="content"></param>
         public event Action<object> DialogOpening;
 
         //public event OpenEventHandler DialogOpening;

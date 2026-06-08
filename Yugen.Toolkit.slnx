@@ -1,0 +1,103 @@
+<Solution>
+  <Configurations>
+    <Platform Name="ARM64" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="README.md" />
+  </Folder>
+  <Folder Name="/Solution Items/.github/">
+    <File Path=".github/workflows/nuget-standard-core.yml" />
+    <File Path=".github/workflows/nuget-standard-data.yml" />
+    <File Path=".github/workflows/nuget-standard.yml" />
+    <File Path=".github/workflows/nuget-uwp-audio-controls.yml" />
+    <File Path=".github/workflows/nuget-uwp-audio-services-abstractions.yml" />
+    <File Path=".github/workflows/nuget-uwp-audio-services-bass.yml" />
+    <File Path=".github/workflows/nuget-uwp-controls.yml" />
+    <File Path=".github/workflows/nuget-uwp-mvvm.yml" />
+    <File Path=".github/workflows/nuget-uwp.yml" />
+  </Folder>
+  <Folder Name="/Solution Items/Docs/">
+    <File Path="Docs/build.ps1" />
+    <File Path="Docs/icon.png" />
+  </Folder>
+  <Folder Name="/Solution Items/Snippets/" />
+  <Folder Name="/Solution Items/Snippets/CS/">
+    <File Path="Snippets/Cs/AsyncRelayCommand.snippet" />
+    <File Path="Snippets/Cs/DataContext.snippet" />
+    <File Path="Snippets/Cs/NotifyProperty.snippet" />
+    <File Path="Snippets/Cs/NotifyPropertyAction.snippet" />
+    <File Path="Snippets/Cs/NotifyPropertyWrap.snippet" />
+    <File Path="Snippets/Cs/RelayCommand.snippet" />
+  </Folder>
+  <Folder Name="/Solution Items/Snippets/Xaml/">
+    <File Path="Snippets/Xaml/Behaviors.snippet" />
+    <File Path="Snippets/Xaml/Storyboard.snippet" />
+    <File Path="Snippets/Xaml/WinUI.snippet" />
+  </Folder>
+  <Project Path="AudioVisualizer/AudioVisualizer.vcxproj" Id="da1a2266-1149-4a19-8a3a-3f1ca7717a6f" />
+  <Project Path="ScreenSenderComponent/ScreenSenderComponent.vcxproj" Id="9762cc81-d63d-4952-9cba-f812755c3444" />
+  <Project Path="Yugen.Toolkit.Core.Sample/Yugen.Toolkit.Core.Sample.csproj" />
+  <Project Path="Yugen.Toolkit.Standard.Core/Yugen.Toolkit.Standard.Core.csproj" />
+  <Project Path="Yugen.Toolkit.Standard.Data.Sample/Yugen.Toolkit.Standard.Data.Sample.csproj" />
+  <Project Path="Yugen.Toolkit.Standard.Data/Yugen.Toolkit.Standard.Data.csproj" />
+  <Project Path="Yugen.Toolkit.Standard.Printer/Yugen.Toolkit.Standard.Printer.csproj" />
+  <Project Path="Yugen.Toolkit.Standard.Security/Yugen.Toolkit.Standard.Security.csproj" />
+  <Project Path="Yugen.Toolkit.Standard/Yugen.Toolkit.Standard.csproj" />
+  <Project Path="Yugen.Toolkit.Uwp.Audio.Controls/Yugen.Toolkit.Uwp.Audio.Controls.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Audio.Services.Abstractions/Yugen.Toolkit.Uwp.Audio.Services.Abstractions.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Audio.Services.AudioGraph/Yugen.Toolkit.Uwp.Audio.Services.AudioGraph.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Audio.Services.Bass/Yugen.Toolkit.Uwp.Audio.Services.Bass.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Audio.Services.Common/Yugen.Toolkit.Uwp.Audio.Services.Common.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Audio.Services.NAudio/Yugen.Toolkit.Uwp.Audio.Services.NAudio.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Controls/Yugen.Toolkit.Uwp.Controls.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Mvvm/Yugen.Toolkit.Uwp.Mvvm.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Printer/Yugen.Toolkit.Uwp.Printer.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp/Yugen.Toolkit.Uwp.csproj">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.Samples/Yugen.Toolkit.Uwp.Samples.csproj" Id="9fb8d2fd-2c73-4e1f-b428-f6029b78e42b">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Deploy />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.CodeChallenge.UnitTest/Yugen.Toolkit.Uwp.CodeChallenge.UnitTest.csproj" Id="c4291801-3352-42b7-88e0-707738e761ba">
+    <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Deploy />
+  </Project>
+  <Project Path="Yugen.Toolkit.Uwp.CodeChallenge/Yugen.Toolkit.Uwp.CodeChallenge.csproj" Id="0f3b0a64-8ed6-4b08-9528-2af3f065579c">
+   <Platform Solution="*|ARM64" Project="ARM64" />
+    <Platform Solution="*|x64" Project="x64" />
+    <Deploy />
+  </Project>
+</Solution>

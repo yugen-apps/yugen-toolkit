@@ -3,8 +3,8 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:collections="using:Microsoft.Toolkit.Collections"
-      xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
+	  xmlns:collections="using:CommunityToolkit.Mvvm.Collections"
+	  xmlns:models="using:Yugen.Toolkit.Uwp.Samples.Models"
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 

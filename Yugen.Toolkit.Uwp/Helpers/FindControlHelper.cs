@@ -170,14 +170,15 @@ namespace Yugen.Toolkit.Uwp.Helpers
         }
 
 
-        /// <summary>
-        /// No Mobile Anymore
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        /// <param name="button"></param>
-        /// <returns></returns>
-        public static bool GoToNextControlIfMobileOrCheckEnterIfDesktop(List<Control> controlList, object sender, KeyRoutedEventArgs e, Button button)
+		/// <summary>
+		/// No Mobile Anymore
+		/// </summary>
+		/// <param name="controlList"></param>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		/// <param name="button"></param>
+		/// <returns></returns>
+		public static bool GoToNextControlIfMobileOrCheckEnterIfDesktop(List<Control> controlList, object sender, KeyRoutedEventArgs e, Button button)
         {
             if (!e.Key.Equals(Windows.System.VirtualKey.Enter))
                 return false;
@@ -193,7 +194,7 @@ namespace Yugen.Toolkit.Uwp.Helpers
         /// 
         /// </summary>
         /// <param name="button"></param>
-        /// <param name="e"></param>
+        /// <param name="_"></param>
         /// <returns></returns>
         private static bool IsButtonEnabled(Button button, KeyRoutedEventArgs _) => !SystemHelper.IsMobile && button.IsEnabled;
     }

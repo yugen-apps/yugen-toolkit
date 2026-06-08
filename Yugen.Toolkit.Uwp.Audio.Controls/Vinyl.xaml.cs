@@ -106,7 +106,7 @@ namespace Yugen.Toolkit.Uwp.Audio.Controls
 
         private void OnUpdate(ICanvasAnimatedControl sender, CanvasAnimatedUpdateEventArgs args)
         {
-            var vinylEventArgs = _vinylRenderer.Update(sender, args);
+            var vinylEventArgs = _vinylRenderer?.Update(sender, args);
             Update?.Invoke(vinylEventArgs);
         }
 

@@ -1,6 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
-using Microsoft.Toolkit.Uwp;
-using Microsoft.Toolkit.Uwp.Helpers;
+using CommunityToolkit.WinUI;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -12,12 +11,13 @@ using Yugen.Audio.Samples.Services;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Audio.Services.Abstractions;
 using Yugen.Toolkit.Uwp.Helpers;
+using Yugen.Toolkit.Uwp.Extensions;
 
 namespace Yugen.Audio.Samples.ViewModels
 {
     public class DeckViewModel : ViewModelBase
     {
-        private readonly IAudioPlayer _audioPlayer = new BassPlayer();
+        private readonly BassPlayer _audioPlayer = new BassPlayer();
 
         private readonly IWaveformService _waveformService;
         private IBPMService _bpmService;

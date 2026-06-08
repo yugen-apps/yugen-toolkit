@@ -1,6 +1,5 @@
-﻿using ManagedBass;
-using CommunityToolkit.Mvvm.Input;
-using Microsoft.Toolkit.Uwp.Helpers;
+﻿using CommunityToolkit.Mvvm.Input;
+using ManagedBass;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +9,7 @@ using Windows.Storage.Pickers;
 using Yugen.Toolkit.Standard.Mvvm;
 using Yugen.Toolkit.Uwp.Audio.Services.Abstractions;
 using Yugen.Toolkit.Uwp.Helpers;
+using Yugen.Toolkit.Uwp.Extensions;
 
 namespace Yugen.Audio.Samples.ViewModels
 {

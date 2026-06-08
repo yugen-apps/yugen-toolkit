@@ -12,8 +12,6 @@ namespace Yugen.Toolkit.Uwp.Audio.Services.Bass
         {
             List<(float min, float max)> peakList = new List<(float min, float max)>();
 
-            ///
-
             //var handle = Bass.CreateStream(audioBytes, 0, audioBytes.Length, BassFlags.Decode);
 
             // TODO: FFT / Waveform

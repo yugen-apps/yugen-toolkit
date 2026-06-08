@@ -2,34 +2,18 @@
 
 	<PropertyGroup>
 		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>8.0</LangVersion>
 		<GenerateDocumentationFile>true</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Author>panda-sharp</Author>
-		<Solution>Yugen.Toolkit</Solution>
-		<Project>Yugen.Toolkit.Standard.Data</Project>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<PackageId>$(Project)</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
 		<Description>
 			This package includes code .Net Standard EF core data repository and service
 			It is part of the Yugen Toolkit.
 		</Description>
-		<Authors>$(Author)</Authors>
-		<Title>$(Project)</Title>
-		<!--<Company>panda-sharp</Company>-->
-		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/$(Author)/$(Solution)</PackageProjectUrl>
-		<PackageIcon>images\icon.png</PackageIcon>
-		<PackageReadmeFile>docs\Readme.md</PackageReadmeFile>
-		<!-- <PackageReleaseNotes>releaseNotes</PackageReleaseNotes> -->
-		<!-- <Copyright>Copyright</Copyright> -->
-		<PackageTags>Yugen Toolkit Data</PackageTags>
-		<RepositoryUrl>https://github.com/panda-sharp/Yugen.Toolkit.git</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
+		<PackageId>Yugen.Toolkit.Standard.Data</PackageId>
+		<PackageTags>Yugen Toolkit Data</PackageTags>	
+		<Title>$(PackageId)</Title>	
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -38,11 +22,6 @@
 			<PrivateAssets>all</PrivateAssets>
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
-		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
 	</ItemGroup>
 
 	<ItemGroup>

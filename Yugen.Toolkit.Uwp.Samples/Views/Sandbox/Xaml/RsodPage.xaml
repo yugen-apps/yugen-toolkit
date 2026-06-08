@@ -4,8 +4,8 @@
       xmlns:local="using:Yugen.Toolkit.Uwp.Samples.Views.Sandbox.Xaml"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-      xmlns:ui="using:Microsoft.Toolkit.Uwp.UI"
-      xmlns:icons="using:Fluent.Icons"
+	  xmlns:ui="using:CommunityToolkit.WinUI"
+	  xmlns:icons="using:Fluent.Icons"
       mc:Ignorable="d"
       Background="DarkRed">
 

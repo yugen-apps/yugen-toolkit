@@ -1,0 +1,23 @@
+<Project>
+
+	<PropertyGroup>
+		<Owner>yugen-apps</Owner>
+		<!-- Nuget -->
+		<Authors>panda-sharp</Authors>
+		<!-- <Copyright>Copyright</Copyright> -->
+		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
+		<PackageProjectUrl>https://$(Owner).github.io/yugen-toolkit-docs</PackageProjectUrl>	
+		<PackageIcon>images\icon.png</PackageIcon>
+		<PackageReadmeFile>docs\Readme.md</PackageReadmeFile>		
+		<!-- <PackageReleaseNotes>releaseNotes</PackageReleaseNotes> -->
+		<PackageVersion>1.0.0</PackageVersion>
+		<RepositoryUrl>https://github.com/$(Owner)/yugen-toolkit.git</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
+		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
+	</ItemGroup>
+
+</Project>

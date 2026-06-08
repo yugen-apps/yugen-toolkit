@@ -7,6 +7,7 @@ namespace Yugen.Toolkit.Uwp.Adapters
     /// <code>
     /// <StackPanel xmlns:converters="using:Yugen.Toolkit.Uwp.Adapters"
     ///             Visibility="{x:Bind converters:DebugToVisibilityAdapter.Build()}">
+    /// </StackPanel>
     /// </code>
     /// </summary>
     public static class DebugToVisibilityAdapter

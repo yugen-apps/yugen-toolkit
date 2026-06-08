@@ -1,12 +1,14 @@
 ﻿<Project Sdk="MSBuild.Sdk.Extras">
-	
+
 	<PropertyGroup>
-		<TargetFrameworks>uap10.0.18362</TargetFrameworks>
+		<TargetFrameworks>uap10.0.26100</TargetFrameworks>
+		<LangVersion>8.0</LangVersion>
 		<TargetPlatformBaseVersion>10.0</TargetPlatformBaseVersion>
-		<TargetPlatformRevision>22000</TargetPlatformRevision>
+		<TargetPlatformRevision>26100</TargetPlatformRevision>
 		<TargetPlatformMinRevision>18362</TargetPlatformMinRevision>
 		<TargetPlatformVersion>$(TargetPlatformBaseVersion).$(TargetPlatformRevision).0</TargetPlatformVersion>
 		<TargetPlatformMinVersion>$(TargetPlatformBaseVersion).$(TargetPlatformMinRevision).0</TargetPlatformMinVersion>
+		<ExtrasUwpMetaPackageVersion>6.2.14</ExtrasUwpMetaPackageVersion>
 		<DebugType>Portable</DebugType>
 		<GenerateLibraryLayout>true</GenerateLibraryLayout>
 		<IsPackable>true</IsPackable>
@@ -14,50 +16,26 @@
 		<ExtrasEnableDefaultXamlItems>true</ExtrasEnableDefaultXamlItems>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 		<AllowedOutputExtensionsInPackageBuildOutputFolder>$(AllowedOutputExtensionsInPackageBuildOutputFolder);.pdb</AllowedOutputExtensionsInPackageBuildOutputFolder>
-		<RootNamespace>Yugen.Toolkit.Uwp</RootNamespace>
 		<Platforms>x64;ARM64</Platforms>
-		<RuntimeIdentifiers>win10-x64;win-arm64</RuntimeIdentifiers>
+		<RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
 		<NoWarn>$(NoWarn);NETSDK1023</NoWarn>
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<Author>panda-sharp</Author>
-		<Solution>Yugen.Toolkit</Solution>
-		<Project>Yugen.Toolkit.Uwp</Project>
-	</PropertyGroup>
-
-	<PropertyGroup>
-		<PackageId>$(Project)</PackageId>
-		<PackageVersion>1.0.0</PackageVersion>
 		<Description>
 			This package includes Uwp converters, extension, helpers...
 			It is part of the Yugen Toolkit.
 		</Description>
-		<Authors>$(Author)</Authors>
-		<Title>$(Project)</Title>
-		<!--<Company>panda-sharp</Company>-->
-		<PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/$(Author)/$(Solution)</PackageProjectUrl>
-		<PackageIcon>images\icon.png</PackageIcon>
-		<PackageReadmeFile>docs\Readme.md</PackageReadmeFile>
-		<!-- <PackageReleaseNotes>releaseNotes</PackageReleaseNotes> -->
-		<!-- <Copyright>Copyright</Copyright> -->
+		<PackageId>Yugen.Toolkit.Uwp</PackageId>
 		<PackageTags>Yugen Toolkit Uwp Converters Extension Helpers</PackageTags>
-		<RepositoryUrl>https://github.com/panda-sharp/Yugen.Toolkit.git</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
+		<Title>$(PackageId)</Title>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<None Include="..\Docs\icon.png" Pack="true" PackagePath="\images\" />
-		<None Include="..\Readme.md" Pack="true" PackagePath="\docs\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Common" Version="8.0.0" />
-		<PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.2.14" />
-		<PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed" Version="2.0.1" />
-		<PackageReference Include="System.Text.Json" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Common" Version="8.4.2" />
+		<PackageReference Include="Microsoft.Xaml.Behaviors.Uwp.Managed" Version="3.0.1" />
+		<PackageReference Include="System.Text.Json" Version="10.0.8" />
 	</ItemGroup>
 
 	<ItemGroup>
