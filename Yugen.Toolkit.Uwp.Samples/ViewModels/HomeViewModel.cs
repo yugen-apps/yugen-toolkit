@@ -11,7 +11,7 @@ namespace Yugen.Toolkit.Uwp.Samples.ViewModels
             DownloadTextCommand = new AsyncRelayCommand(DownloadTextAsync);
         }
 
-        public string GitHubRepositoryUrl => "https://github.com/Panda-Sharp/Yugen.Toolkit";
+        public string GitHubRepositoryUrl => "https://github.com/yugen-apps/yugen-toolkit";
 
         public IAsyncRelayCommand DownloadTextCommand { get; }
 
